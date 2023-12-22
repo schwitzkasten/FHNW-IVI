@@ -8,16 +8,11 @@ import numpy as np
 
 app = dash.Dash(__name__)
 
-df = pd.read_csv('C:/Users/lucag/OneDrive/FHNW/3_Sem/IVI/FHNW-IVI/FHNW-IVI/DATA/imdb_top_movies.csv')
-
-#extract year from title
-df['year'] = df['Year']
+df = pd.read_csv('C:/Users/lucag/OneDrive/FHNW/3_Sem/IVI/FHNW-IVI/FHNW-IVI/DATA/imdb_top_1000_2.csv')
 
 #convert year to datetime and remove year from title
 df['year'] = pd.to_datetime(df['year'], format='%Y')
 
-#remove year from title
-df['title'] = df['Film']
 
 #extract genres
 df['genres'] = df['Genre']
